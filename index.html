@@ -3,462 +3,396 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)" />
 
-  <title>[Your Name] — Software Engineer</title>
-  <meta name="description" content="[Your Name] — Software Engineer building thoughtful, performant web software." />
+  <title>Portfolio — [Your Name]</title>
+  <meta name="description" content="[Your Name] — software engineer. Selected work, services, and what I'm building." />
   <meta name="author" content="[Your Name]" />
 
   <link rel="canonical" href="https://belmer.github.io/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="[Your Name] — Software Engineer" />
-  <meta property="og:description" content="Portfolio of [Your Name] — selected work, experience, and what I'm building." />
+  <meta property="og:title" content="Portfolio — [Your Name]" />
+  <meta property="og:description" content="Selected work, services, and what I'm building." />
   <meta property="og:url" content="https://belmer.github.io/" />
-  <meta property="og:image" content="https://belmer.github.io/images/logo.svg" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="[Your Name] — Software Engineer" />
-  <meta name="twitter:description" content="Portfolio of [Your Name] — selected work, experience, and what I'm building." />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@__mr_b_" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png" />
-  <link rel="manifest" href="/images/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png" />
+  <link rel="manifest" href="images/manifest.json" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Theme: applied before paint to prevent FOUC -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Shared SVG defs (gradient strokes) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Reusable SVG symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
-      <linearGradient id="grad-line" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#8b5cf6" />
-        <stop offset="100%" stop-color="#22d3ee" />
-      </linearGradient>
+      <!-- Filter / sort / search action icons (used in tab bars) -->
+      <symbol id="ico-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="7"  x2="20" y2="7" />
+        <line x1="7" y1="12" x2="17" y2="12" />
+        <line x1="10" y1="17" x2="14" y2="17" />
+      </symbol>
+      <symbol id="ico-sort" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 4v16M4 17l3 3 3-3" />
+        <path d="M17 4v16M14 7l3-3 3 3" />
+      </symbol>
+      <symbol id="ico-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </symbol>
+      <!-- Project card folder -->
+      <symbol id="ico-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
+      </symbol>
     </defs>
   </svg>
 
-  <header class="site-header" id="site-header">
-    <div class="container">
-      <nav class="nav" id="primary-nav" aria-label="Primary">
-        <a href="#top" class="brand" aria-label="Home">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span>[your-name]</span>
-        </a>
+  <button class="theme-fab" id="theme-toggle" type="button" aria-label="Switch theme">
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
 
-        <ul class="nav-links">
-          <li><a href="#about" data-nav>About</a></li>
-          <li><a href="#skills" data-nav>Skills</a></li>
-          <li><a href="#experience" data-nav>Experience</a></li>
-          <li><a href="#projects" data-nav>Projects</a></li>
-        </ul>
+  <main class="page" id="top">
+    <h1 class="page-title">Portfolio</h1>
 
-        <a href="#contact" class="nav-cta">
-          Get in touch
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">
-            <path d="M5 12h14M13 5l7 7-7 7" />
-          </svg>
-        </a>
-
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-    <!-- ========================== HERO ========================== -->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="container">
-        <span class="hero-greeting">Available for new work</span>
-        <h1 class="hero-title">
-          <span class="line">Hi, I'm <span class="gradient-text">[Your Name]</span>.</span>
-          <span class="line">I build software for the web.</span>
-        </h1>
-        <p class="hero-subtitle">
-          [Your one-line tagline — e.g. "Software engineer focused on building fast, accessible, and delightful interfaces. Currently working on [thing] at [place]."]
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2 class="hero-greeting">Hello, I'm Belmer Belandres.</h2>
+        <p>
+          I'm the <strong>co-founder &amp; CTO</strong> of
+          <a href="https://world-class.design/" target="_blank" rel="noopener">World&nbsp;Class&nbsp;Design</a> —
+          a portfolio-first hiring platform that helps companies find designers
+          by the work they've actually shipped, not by where they went to school
+          or how their résumé reads.
         </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            View work
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 5l7 7-7 7" />
+        <p>
+          My day-to-day splits between <strong>writing code</strong>,
+          <strong>shaping product direction</strong>, and making sure our
+          systems hold up as we index hundreds of thousands of portfolios. I
+          care about software that's quiet, fast, and obviously useful.
+        </p>
+        <a class="hero-cta" href="mailto:[your-email@example.com]">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <line x1="16" y1="3" x2="16" y2="7" />
+            <line x1="8"  y1="3" x2="8"  y2="7" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          Book a call
+        </a>
+      </div>
+
+      <div class="hero-image" role="img" aria-label="Belmer Belandres" style="background-image: url('images/profile.png');"></div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="tabs" data-tabs>
+        <div class="tab-bar" role="tablist" aria-label="Skill categories">
+          <button class="tab" role="tab" aria-selected="true" data-tab="skills-software">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="13" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
             </svg>
-          </a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            Software
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="skills-expertise">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            Expertise
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="skills-language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+            </svg>
+            Language
+          </button>
+          <div class="tab-actions">
+            <button class="tab-action" type="button" aria-label="Filter"><svg><use href="#ico-filter" /></svg></button>
+            <button class="tab-action" type="button" aria-label="Sort"><svg><use href="#ico-sort" /></svg></button>
+            <button class="tab-action" type="button" aria-label="Search"><svg><use href="#ico-search" /></svg></button>
+          </div>
         </div>
 
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Location</span>
-            <span class="hero-meta-value">[Your Location]</span>
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Role</span>
-            <span class="hero-meta-value">[Your Title]</span>
-          </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Status</span>
-            <span class="hero-meta-value">Open to opportunities</span>
+        <div class="tab-panel" id="skills-software" data-active>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg>
+              </span>
+              PostgreSQL
+            </div>
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><polyline points="7 10 10 13 7 16" /><line x1="13" y1="16" x2="17" y2="16" /></svg>
+              </span>
+              Ghostty Terminal
+            </div>
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><line x1="3" y1="8" x2="21" y2="8" /><line x1="7" y1="12" x2="14" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
+              </span>
+              Zed Editor
+            </div>
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" /><path d="M12 8v9M9 11l3 1.5 3-1.5" /></svg>
+              </span>
+              Node.js
+            </div>
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><line x1="8" y1="9" x2="14" y2="9" /><line x1="11" y1="9" x2="11" y2="16" /></svg>
+              </span>
+              TypeScript
+            </div>
+            <div class="skill-card">
+              <span class="skill-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+              </span>
+              Python
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ========================== ABOUT ========================== -->
-    <section id="about" aria-labelledby="about-title">
-      <div class="container">
-        <span class="section-eyebrow">01 / About</span>
-        <h2 class="section-title reveal" id="about-title">A little about me.</h2>
-
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>
-              <strong>[Your Bio — paragraph 1.]</strong>
-              Replace this with a few sentences about who you are and what you do.
-              Talk about the kinds of problems you like working on and the sorts
-              of products you've helped ship.
-            </p>
-            <p>
-              [Paragraph 2.] Add some texture — your background, what excites you
-              technically, the languages and ecosystems you reach for, and maybe
-              a sentence about how you collaborate.
-            </p>
-            <p>
-              [Paragraph 3.] Wrap with what you're up to right now — current focus,
-              what you're learning, or what you're looking for next.
-            </p>
+        <div class="tab-panel" id="skills-expertise">
+          <div class="skill-grid">
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l3-3 3 3 3-3 3 3 3-3 3 3" /><path d="M3 17h18" /></svg></span>Frontend</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg></span>Databases</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19.5L22 15l-4.5-4.5M6.5 19.5L2 15l4.5-4.5" /><path d="M14 4l-4 16" /></svg></span>System Design</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>Performance</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-5 9 5-9 5-9-5z" /><path d="M3 12l9 5 9-5M3 17l9 5 9-5" /></svg></span>Architecture</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3" /><circle cx="17" cy="7" r="3" /><path d="M3 19c0-3 3-5 6-5s6 2 6 5" /><path d="M14 14c2 0 4 1.5 4 5" /></svg></span>Mentorship</div>
           </div>
-
-          <aside class="about-card reveal">
-            <p class="about-card-title">// at a glance</p>
-            <ul class="about-facts">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span><strong>Based in</strong> [Your Location]</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
-                <span><strong>Currently</strong> [Your Role @ Company]</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-                <span><strong>Stack</strong> [JS · TS · React · Node · …]</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
-                <span><strong>Interests</strong> [DX, perf, design systems]</span>
-              </li>
-            </ul>
-          </aside>
         </div>
-      </div>
-    </section>
 
-    <!-- ========================== SKILLS ========================== -->
-    <section id="skills" aria-labelledby="skills-title">
-      <div class="container">
-        <span class="section-eyebrow">02 / Skills</span>
-        <h2 class="section-title reveal" id="skills-title">Tools I work with.</h2>
-
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h3>// languages</h3>
-            <div class="skill-chips">
-              <span class="chip">JavaScript</span>
-              <span class="chip">TypeScript</span>
-              <span class="chip">Python</span>
-              <span class="chip">Go</span>
-              <span class="chip">SQL</span>
-            </div>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>// frontend</h3>
-            <div class="skill-chips">
-              <span class="chip">React</span>
-              <span class="chip">Next.js</span>
-              <span class="chip">Vue</span>
-              <span class="chip">Tailwind</span>
-              <span class="chip">Vite</span>
-            </div>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>// backend</h3>
-            <div class="skill-chips">
-              <span class="chip">Node.js</span>
-              <span class="chip">Express</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">Redis</span>
-              <span class="chip">REST / GraphQL</span>
-            </div>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>// platform</h3>
-            <div class="skill-chips">
-              <span class="chip">AWS</span>
-              <span class="chip">Docker</span>
-              <span class="chip">GitHub Actions</span>
-              <span class="chip">Linux</span>
-              <span class="chip">Vercel</span>
-            </div>
+        <div class="tab-panel" id="skills-language">
+          <div class="skill-grid">
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>English</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>Bisaya</div>
+            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>Tagalog</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================== EXPERIENCE ========================== -->
-    <section id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <span class="section-eyebrow">03 / Experience</span>
-        <h2 class="section-title reveal" id="experience-title">Where I've worked.</h2>
+    <!-- ============================ PROJECTS ============================ -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
 
-        <ol class="timeline" style="list-style:none; margin:0;">
-          <li class="timeline-item reveal">
-            <div class="timeline-meta">
-              <span>[Start year]</span>
-              <span class="timeline-meta-divider"></span>
-              <span>Present</span>
-            </div>
-            <h3 class="timeline-role">[Your Role]</h3>
-            <p class="timeline-company">[Company Name] · [Location / Remote]</p>
-            <ul class="timeline-bullets">
-              <li>[Achievement or responsibility — quantify the impact when you can.]</li>
-              <li>[Notable project, technology you led, or team outcome.]</li>
-              <li>[Something you shipped that you're proud of.]</li>
-            </ul>
-          </li>
+      <div class="tabs" data-tabs>
+        <div class="tab-bar" role="tablist" aria-label="Project categories">
+          <button class="tab" role="tab" aria-selected="true" data-tab="projects-featured">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="12 2 14.9 8.6 22 9.3 16.5 14.1 18.2 21 12 17.3 5.8 21 7.5 14.1 2 9.3 9.1 8.6" />
+            </svg>
+            Featured
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="projects-past">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            Past Projects
+          </button>
+          <div class="tab-actions">
+            <button class="tab-action" type="button" aria-label="Filter"><svg><use href="#ico-filter" /></svg></button>
+            <button class="tab-action" type="button" aria-label="Sort"><svg><use href="#ico-sort" /></svg></button>
+            <button class="tab-action" type="button" aria-label="Search"><svg><use href="#ico-search" /></svg></button>
+          </div>
+        </div>
 
-          <li class="timeline-item reveal">
-            <div class="timeline-meta">
-              <span>[Start]</span>
-              <span class="timeline-meta-divider"></span>
-              <span>[End]</span>
-            </div>
-            <h3 class="timeline-role">[Previous Role]</h3>
-            <p class="timeline-company">[Previous Company]</p>
-            <ul class="timeline-bullets">
-              <li>[Bullet — what you did, scope, outcome.]</li>
-              <li>[Bullet — concrete result.]</li>
-            </ul>
-          </li>
+        <div class="tab-panel" id="projects-featured" data-active>
+          <div class="project-grid">
+            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
+              <h3 class="project-card-title">
+                <svg><use href="#ico-folder" /></svg>
+                [Project Name]
+              </h3>
+              <p class="project-card-desc">
+                [One- to two-sentence description. What it does, who it's for,
+                and what makes it interesting.]
+              </p>
+              <span class="tag">Consultation</span>
+            </a>
+            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
+              <h3 class="project-card-title">
+                <svg><use href="#ico-folder" /></svg>
+                [Project Name]
+              </h3>
+              <p class="project-card-desc">
+                [Short description of what this project does and why it matters.]
+              </p>
+              <span class="tag">Custom Workspace</span>
+            </a>
+          </div>
+        </div>
 
-          <li class="timeline-item reveal">
-            <div class="timeline-meta">
-              <span>[Start]</span>
-              <span class="timeline-meta-divider"></span>
-              <span>[End]</span>
-            </div>
-            <h3 class="timeline-role">[Earlier Role]</h3>
-            <p class="timeline-company">[Earlier Company]</p>
-            <ul class="timeline-bullets">
-              <li>[Bullet.]</li>
-              <li>[Bullet.]</li>
-            </ul>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ========================== PROJECTS ========================== -->
-    <section id="projects" aria-labelledby="projects-title">
-      <div class="container">
-        <span class="section-eyebrow">04 / Projects</span>
-        <h2 class="section-title reveal" id="projects-title">Selected work.</h2>
-
-        <div class="projects-grid">
-          <article class="project-card reveal">
-            <header class="project-header">
-              <div class="project-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
-                  </svg>
-                </a>
-                <a href="#" class="project-link" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                </a>
-              </div>
-            </header>
-            <h3 class="project-title">[Project Name]</h3>
-            <p class="project-desc">
-              [One- to two-sentence description. What it does, who it's for, what
-              makes it interesting.]
-            </p>
-            <div class="project-tech">
-              <span>React</span>
-              <span>TypeScript</span>
-              <span>Node</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <header class="project-header">
-              <div class="project-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <line x1="9" y1="9" x2="15" y2="9" />
-                  <line x1="9" y1="13" x2="15" y2="13" />
-                  <line x1="9" y1="17" x2="13" y2="17" />
-                </svg>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
-                  </svg>
-                </a>
-              </div>
-            </header>
-            <h3 class="project-title">[Project Name]</h3>
-            <p class="project-desc">
-              [Short description of what this project does and why it matters.]
-            </p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>FastAPI</span>
-              <span>PostgreSQL</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <header class="project-header">
-              <div class="project-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                  <line x1="12" y1="22.08" x2="12" y2="12" />
-                </svg>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
-                  </svg>
-                </a>
-                <a href="#" class="project-link" aria-label="Live demo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                </a>
-              </div>
-            </header>
-            <h3 class="project-title">[Project Name]</h3>
-            <p class="project-desc">
-              [Why you built it, what it solved. Include something specific to
-              hook the reader.]
-            </p>
-            <div class="project-tech">
-              <span>Go</span>
-              <span>gRPC</span>
-              <span>Docker</span>
-            </div>
-          </article>
+        <div class="tab-panel" id="projects-past">
+          <div class="project-grid">
+            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
+              <h3 class="project-card-title">
+                <svg><use href="#ico-folder" /></svg>
+                [Earlier Project]
+              </h3>
+              <p class="project-card-desc">[Short description of an earlier project.]</p>
+              <span class="tag">Side project</span>
+            </a>
+            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
+              <h3 class="project-card-title">
+                <svg><use href="#ico-folder" /></svg>
+                [Earlier Project]
+              </h3>
+              <p class="project-card-desc">[Short description of an earlier project.]</p>
+              <span class="tag">Open source</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================== CONTACT ========================== -->
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <span class="section-eyebrow">05 / Contact</span>
-        <h2 class="contact-headline reveal" id="contact-title">
-          Let's <span class="gradient-text">build</span> something.
-        </h2>
-        <p class="contact-sub reveal">
-          I'm open to interesting roles, freelance projects, and conversations
-          about software craft. The fastest way to reach me is email.
+    <!-- ============================ SERVICES ============================ -->
+    <section class="section">
+      <h2 class="section-title">Services</h2>
+      <table class="services-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Consultation</th>
+            <th>Custom Workspace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Description</th>
+            <td>[A detailed consultation to optimize your existing setup.]</td>
+            <td>[Create a custom setup tailored to your needs and workflow.]</td>
+          </tr>
+          <tr>
+            <th scope="row">Pricing</th>
+            <td>[$X for a 60-min session]</td>
+            <td>[Starts from $Y]</td>
+          </tr>
+          <tr>
+            <th scope="row">Features</th>
+            <td>
+              <ul>
+                <li>[Feature one]</li>
+                <li>[Feature two]</li>
+                <li>[Feature three]</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>[Feature one]</li>
+                <li>[Feature two]</li>
+                <li>[Feature three]</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- =================== LET'S WORK TOGETHER =================== -->
+    <section class="section">
+      <h2 class="section-title">Let's Work Together</h2>
+      <div class="work-grid">
+        <p class="work-text">
+          If you're hiring designers, building a hiring tool, or working on
+          something at the intersection of AI, search, and people — I'd love
+          to hear from you. The fastest way to reach me is the form. I usually
+          reply within a couple of working days.
         </p>
 
-        <button type="button" class="contact-email reveal" id="copy-email" data-email="[your-email@example.com]">
-          <span id="copy-email-label">[your-email@example.com]</span>
-          <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-        </button>
-
-        <div class="contact-socials reveal">
-          <a class="social-link" href="https://github.com/belmer" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
-            </svg>
-          </a>
-          <a class="social-link" href="https://twitter.com/__mr_b_" target="_blank" rel="noopener" aria-label="Twitter / X">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.969 6.817H1.671l7.732-8.835L1.244 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a class="social-link" href="https://stackoverflow.com/users/163228/mr-b" target="_blank" rel="noopener" aria-label="Stack Overflow">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.36 20.13v-4.62h1.54V21.7H3v-6.19h1.54v4.62zM5.79 14.9l8.45 1.79.32-1.51-8.45-1.79zm1.12-4.04l7.83 3.65.65-1.39-7.83-3.66zm2.18-3.84l6.62 5.52 1-1.18-6.63-5.52zM13.4 3.07l-1.24.92 5.13 6.91 1.24-.92zM5.62 17.97h8.64v-1.54H5.62z" />
-            </svg>
-          </a>
-          <a class="social-link" href="mailto:[your-email@example.com]" aria-label="Email">
+        <!-- NOTE: replace `action` with your form endpoint (Formspree, Basin,
+             Web3Forms, etc.) when going live. -->
+        <form class="contact-form" action="#" method="post" novalidate>
+          <div class="form-field">
+            <label for="f-name">Name <span class="form-required" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" placeholder="John Doe" required />
+          </div>
+          <div class="form-field">
+            <label for="f-company">Company <span class="form-required" aria-hidden="true">*</span></label>
+            <input id="f-company" name="company" type="text" placeholder="Acme, Inc." required />
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email <span class="form-required" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" placeholder="hello@example.com" required />
+          </div>
+          <div class="form-field">
+            <label for="f-help">How can I help you? <span class="form-required" aria-hidden="true">*</span></label>
+            <select id="f-help" name="help" required>
+              <option value="" disabled selected></option>
+              <option>Consultation</option>
+              <option>Custom Workspace</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-message">Tell me about your project <span class="form-required" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" placeholder="Your message" required></textarea>
+          </div>
+          <button class="form-submit" type="submit">
+            Submit
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
-        </div>
+          </button>
+        </form>
       </div>
     </section>
+
+    <!-- ============================ FAQs ============================ -->
+    <section class="faqs">
+      <h2>FAQs</h2>
+      <details>
+        <summary>How do we get started?</summary>
+        <p>[Answer — explain your typical onboarding flow, lead time, and what info you need from clients up-front.]</p>
+      </details>
+      <details>
+        <summary>What's your turnaround time?</summary>
+        <p>[Answer — typical project lengths, response times, etc.]</p>
+      </details>
+      <details>
+        <summary>Do you offer revisions?</summary>
+        <p>[Answer — your revision policy.]</p>
+      </details>
+    </section>
+
+    <p class="site-footer">© <span id="year">2026</span> [Your Name]</p>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>© <span id="year">2026</span> [Your Name]. All rights reserved.</span>
-      <span>Built with vanilla web</span>
-    </div>
-  </footer>
-
-  <script src="/js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
