@@ -1,655 +1,464 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0f" />
 
-<link rel="stylesheet" href="/css/main.css">
+  <title>[Your Name] — Software Engineer</title>
+  <meta name="description" content="[Your Name] — Software Engineer building thoughtful, performant web software." />
+  <meta name="author" content="[Your Name]" />
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="canonical" href="https://belmer.github.io/" />
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"belmer.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[Your Name] — Software Engineer" />
+  <meta property="og:description" content="Portfolio of [Your Name] — selected work, experience, and what I'm building." />
+  <meta property="og:url" content="https://belmer.github.io/" />
+  <meta property="og:image" content="https://belmer.github.io/images/logo.svg" />
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="{mr.b}">
-<meta property="og:url" content="https://belmer.github.io/index.html">
-<meta property="og:site_name" content="{mr.b}">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="{mr.b}">
-<meta name="twitter:card" content="summary">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[Your Name] — Software Engineer" />
+  <meta name="twitter:description" content="Portfolio of [Your Name] — selected work, experience, and what I'm building." />
+  <meta name="twitter:site" content="@__mr_b_" />
 
-<link rel="canonical" href="https://belmer.github.io/">
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png" />
+  <link rel="manifest" href="/images/manifest.json" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-
-  <title>{mr.b}</title>
-  
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29103248-7"></script> -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-29103248-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-29103248-7');
-    </script>
-
-    <script>
-      /* if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-29103248-7');
-     }*/
-    </script>
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">{mr.b}</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">Hello world</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://belmer.github.io/2021/10/06/Openrgb-on-Linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile2.png">
-      <meta itemprop="name" content="{mr.b}">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{mr.b}">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/06/Openrgb-on-Linux/" class="post-title-link" itemprop="url">Openrgb on Linux with MSI Motherboard</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-06 06:22:24" itemprop="dateCreated datePublished" datetime="2021-10-06T06:22:24+08:00">2021-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 18:16:26" itemprop="dateModified" datetime="2021-10-14T18:16:26+08:00">2021-10-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>This document is to highlights the steps to make OpenRGB work on Linux with MSI Motherboard. This is actually the general<br>process for all motherboard that are supported on OpenRGB but few notes I found that works on my MSI motherboard.</p>
-<p><a target="_blank" rel="noopener" href="https://openrgb.org/">Download OpenRGB</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitlab.com/CalcProgrammer1/OpenRGB">OpenRGB project repository</a></p>
-<p><img src="/images/post/openrgb-min.png" alt="OpenRGB on Linux with MSI Motherboard"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/06/Openrgb-on-Linux/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://belmer.github.io/2021/10/05/Tic-Tac-Toe/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile2.png">
-      <meta itemprop="name" content="{mr.b}">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{mr.b}">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/05/Tic-Tac-Toe/" class="post-title-link" itemprop="url">Building tic-tac-toe game using ReactJs and Firebase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-05 12:39:30" itemprop="dateCreated datePublished" datetime="2021-10-05T12:39:30+08:00">2021-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 18:17:08" itemprop="dateModified" datetime="2021-10-14T18:17:08+08:00">2021-10-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Written-in-reactjs-16-react-router-4-redux-nodejs-and-firebase"><a href="#Written-in-reactjs-16-react-router-4-redux-nodejs-and-firebase" class="headerlink" title="Written in reactjs 16, react-router 4, redux, nodejs and firebase."></a>Written in reactjs 16, react-router 4, redux, nodejs and firebase.</h3><p>Feel free to clone the repository here and I’d be happy to accomodate any suggestions or improvements. As for the Reactjs 16 new features, it was not really demonstrated on this project. Further improvements will be coming up highlighting Reactjs 16 new feautres. Redux was really not clearly demonstrated here as I was using firebaseconnect and it feels like not a very good library in demonstrating what Redux and how Redux should be used. My mistake… :-). I will create a different post just for Redux.</p>
-<p><img src="/images/post/tic-tac-toe-min.png" alt="Tic-tac-toe"></p>
-<blockquote>
-<p>Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</p>
-</blockquote>
-<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a><a target="_blank" rel="noopener" href="https://belmer0tictactoe.github.io/">Demo</a></h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/05/Tic-Tac-Toe/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://belmer.github.io/2021/10/05/Sublime-Linting/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile2.png">
-      <meta itemprop="name" content="{mr.b}">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{mr.b}">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/05/Sublime-Linting/" class="post-title-link" itemprop="url">Sublime Linting for React and ES6</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-05 12:11:52" itemprop="dateCreated datePublished" datetime="2021-10-05T12:11:52+08:00">2021-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 18:18:06" itemprop="dateModified" datetime="2021-10-14T18:18:06+08:00">2021-10-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Few months ago I wrote this article on medium. But I thought I should also post it here. And so here it is.</p>
-<p><img src="/images/post/sublime.png" alt="Sublime Linting for React and Es6"></p>
-<h3 id="Story"><a href="#Story" class="headerlink" title="Story"></a>Story</h3><p>Lately Im having problem implementing linter on Sublime Text for my team that has support for React/JSX and ES6 syntax following some tutorials on the interweb… So I decided to share the steps here as others might have the same problem. I find this extremely helpful in our team as it provides uniform formats and style guides all throughout the code base.</p>
-<p>If your new to Eslint please follow the link to their documentation. What this is all about is to outline the errors/issues within your JS/JSX code within Sublime Text Editor. So let’s dive in. :-)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/05/Sublime-Linting/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://belmer.github.io/2021/10/01/Language-Jargon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/profile2.png">
-      <meta itemprop="name" content="{mr.b}">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{mr.b}">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/01/Language-Jargon/" class="post-title-link" itemprop="url">Understanding language jargon to be a better programmer</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-01 14:26:11" itemprop="dateCreated datePublished" datetime="2021-10-01T14:26:11+08:00">2021-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-05 13:24:03" itemprop="dateModified" datetime="2021-10-05T13:24:03+08:00">2021-10-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>In this article, I will use Javascript Jargons as an example.</p>
-<p>A lot of developers or programmers(specially to the country where I came from), You and Me and mostly Junior to Mid-level developers have been through this. At some point in time we wrote codes that we barely know what it means as long as we know that it works the way we want it to be or even not in the way that we want (this will make us wonder why?).</p>
-<p><img src="https://lh3.googleusercontent.com/jmvjuzPvfCbEVAXKkBSYFuwCVpD_LOGl7BdGuQZKmPPnDyJQ5R8qpOURYquJ5wy7UbVDfjXs6D1w0VdNusFQRhygkAFEWyY_hIGjAZWbYQZ5NGI0FUY9yy1KKbcjgcBZT6eJlqfzmoPU0DrWeA_P0DqlZxLsW_b_LO-tnwPDHICXeAMXeUScsiqUrIZ3aEcs1zE3601JKs_MymUUyXuPRh8BPGEDIWXZBf8Aue1jitadGCOQStz-aX808wgiOTgCK-nLdYMpBXz-tnkH7AW3co_viSi8LCZBfOByTpf5jj44gYKVMXse1O88LEZQxb_29DeZEJ9aAtGqqogpVO9k0DPIXVlAFFz_cC-BhTQCOD_preVQNVxgr3_niesCAn1yWwLiJmNIUjfOID61wXKl5u68aAaozK2TnH1svIyMaaEZ5d0DXorCOc7c6H8gVHdLf4qLtKiEl38PNHJm3ffMJwKsIUG7SYOKLB6dI_Ae4a-I_hhFAwUuf8TnRfeqGpAXSQz703OktOautTy6a2tyblM_-vwkfAA4vQEYn7VZCm3yVSsMVSjffSeFWUB2OSo_kGaf2XbtiN3A2IR2mgJoyS1pMSvkZZUPGE1MHoBJuKT89mZjJi36ouklOh8atLRM7MDcVrJn9KxXozm22b1gsW0nQ5RjOZGTdfOwVhdT5iFCOdC5uHqercgZzqsU4xz2Vt946_h0ZrY1-dOWEt7tgoI=w760-h400-no?authuser=0" alt="Language Jargon"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/01/Language-Jargon/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="{mr.b}"
-      src="/images/profile2.png">
-  <p class="site-author-name" itemprop="name">{mr.b}</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
+<body>
+  <!-- Shared SVG defs (gradient strokes) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="grad-line" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8b5cf6" />
+        <stop offset="100%" stop-color="#22d3ee" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="#top" class="brand" aria-label="Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>[your-name]</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/belmer" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;belmer" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:dna.belmer@gmail.com" title="E-Mail → mailto:dna.belmer@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/__mr_b_" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;__mr_b_" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/users/163228/mr-b" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;163228&#x2F;mr-b" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
-      </span>
-  </div>
 
+        <ul class="nav-links">
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#skills" data-nav>Skills</a></li>
+          <li><a href="#experience" data-nav>Experience</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+        </ul>
 
+        <a href="#contact" class="nav-cta">
+          Get in touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </a>
 
-      </div>
-
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </nav>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+  </header>
 
+  <main id="top">
+    <!-- ========================== HERO ========================== -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container">
+        <span class="hero-greeting">Available for new work</span>
+        <h1 class="hero-title">
+          <span class="line">Hi, I'm <span class="gradient-text">[Your Name]</span>.</span>
+          <span class="line">I build software for the web.</span>
+        </h1>
+        <p class="hero-subtitle">
+          [Your one-line tagline — e.g. "Software engineer focused on building fast, accessible, and delightful interfaces. Currently working on [thing] at [place]."]
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            View work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
 
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Location</span>
+            <span class="hero-meta-value">[Your Location]</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Role</span>
+            <span class="hero-meta-value">[Your Title]</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Status</span>
+            <span class="hero-meta-value">Open to opportunities</span>
+          </div>
+        </div>
       </div>
-    </main>
+    </section>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+    <!-- ========================== ABOUT ========================== -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <span class="section-eyebrow">01 / About</span>
+        <h2 class="section-title reveal" id="about-title">A little about me.</h2>
 
-        
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              <strong>[Your Bio — paragraph 1.]</strong>
+              Replace this with a few sentences about who you are and what you do.
+              Talk about the kinds of problems you like working on and the sorts
+              of products you've helped ship.
+            </p>
+            <p>
+              [Paragraph 2.] Add some texture — your background, what excites you
+              technically, the languages and ecosystems you reach for, and maybe
+              a sentence about how you collaborate.
+            </p>
+            <p>
+              [Paragraph 3.] Wrap with what you're up to right now — current focus,
+              what you're learning, or what you're looking for next.
+            </p>
+          </div>
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-code"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">{mr.b}</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
+          <aside class="about-card reveal">
+            <p class="about-card-title">// at a glance</p>
+            <ul class="about-facts">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span><strong>Based in</strong> [Your Location]</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span><strong>Currently</strong> [Your Role @ Company]</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                <span><strong>Stack</strong> [JS · TS · React · Node · …]</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <span><strong>Interests</strong> [DX, perf, design systems]</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+    <!-- ========================== SKILLS ========================== -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <span class="section-eyebrow">02 / Skills</span>
+        <h2 class="section-title reveal" id="skills-title">Tools I work with.</h2>
 
-<script src="/js/utils.js"></script>
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>// languages</h3>
+            <div class="skill-chips">
+              <span class="chip">JavaScript</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Python</span>
+              <span class="chip">Go</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
 
-<script src="/js/motion.js"></script>
+          <div class="skill-group reveal">
+            <h3>// frontend</h3>
+            <div class="skill-chips">
+              <span class="chip">React</span>
+              <span class="chip">Next.js</span>
+              <span class="chip">Vue</span>
+              <span class="chip">Tailwind</span>
+              <span class="chip">Vite</span>
+            </div>
+          </div>
 
+          <div class="skill-group reveal">
+            <h3>// backend</h3>
+            <div class="skill-chips">
+              <span class="chip">Node.js</span>
+              <span class="chip">Express</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Redis</span>
+              <span class="chip">REST / GraphQL</span>
+            </div>
+          </div>
 
-<script src="/js/schemes/pisces.js"></script>
+          <div class="skill-group reveal">
+            <h3>// platform</h3>
+            <div class="skill-chips">
+              <span class="chip">AWS</span>
+              <span class="chip">Docker</span>
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">Linux</span>
+              <span class="chip">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ========================== EXPERIENCE ========================== -->
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <span class="section-eyebrow">03 / Experience</span>
+        <h2 class="section-title reveal" id="experience-title">Where I've worked.</h2>
 
-<script src="/js/next-boot.js"></script>
+        <ol class="timeline" style="list-style:none; margin:0;">
+          <li class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>[Start year]</span>
+              <span class="timeline-meta-divider"></span>
+              <span>Present</span>
+            </div>
+            <h3 class="timeline-role">[Your Role]</h3>
+            <p class="timeline-company">[Company Name] · [Location / Remote]</p>
+            <ul class="timeline-bullets">
+              <li>[Achievement or responsibility — quantify the impact when you can.]</li>
+              <li>[Notable project, technology you led, or team outcome.]</li>
+              <li>[Something you shipped that you're proud of.]</li>
+            </ul>
+          </li>
 
+          <li class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>[Start]</span>
+              <span class="timeline-meta-divider"></span>
+              <span>[End]</span>
+            </div>
+            <h3 class="timeline-role">[Previous Role]</h3>
+            <p class="timeline-company">[Previous Company]</p>
+            <ul class="timeline-bullets">
+              <li>[Bullet — what you did, scope, outcome.]</li>
+              <li>[Bullet — concrete result.]</li>
+            </ul>
+          </li>
 
+          <li class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span>[Start]</span>
+              <span class="timeline-meta-divider"></span>
+              <span>[End]</span>
+            </div>
+            <h3 class="timeline-role">[Earlier Role]</h3>
+            <p class="timeline-company">[Earlier Company]</p>
+            <ul class="timeline-bullets">
+              <li>[Bullet.]</li>
+              <li>[Bullet.]</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
 
+    <!-- ========================== PROJECTS ========================== -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <span class="section-eyebrow">04 / Projects</span>
+        <h2 class="section-title reveal" id="projects-title">Selected work.</h2>
 
-  
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <header class="project-header">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link" aria-label="Live demo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </header>
+            <h3 class="project-title">[Project Name]</h3>
+            <p class="project-desc">
+              [One- to two-sentence description. What it does, who it's for, what
+              makes it interesting.]
+            </p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node</span>
+            </div>
+          </article>
 
+          <article class="project-card reveal">
+            <header class="project-header">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <line x1="9" y1="9" x2="15" y2="9" />
+                  <line x1="9" y1="13" x2="15" y2="13" />
+                  <line x1="9" y1="17" x2="13" y2="17" />
+                </svg>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                  </svg>
+                </a>
+              </div>
+            </header>
+            <h3 class="project-title">[Project Name]</h3>
+            <p class="project-desc">
+              [Short description of what this project does and why it matters.]
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+            </div>
+          </article>
 
+          <article class="project-card reveal">
+            <header class="project-header">
+              <div class="project-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/belmer" class="project-link" aria-label="GitHub repository" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+                  </svg>
+                </a>
+                <a href="#" class="project-link" aria-label="Live demo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+            </header>
+            <h3 class="project-title">[Project Name]</h3>
+            <p class="project-desc">
+              [Why you built it, what it solved. Include something specific to
+              hook the reader.]
+            </p>
+            <div class="project-tech">
+              <span>Go</span>
+              <span>gRPC</span>
+              <span>Docker</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- ========================== CONTACT ========================== -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <span class="section-eyebrow">05 / Contact</span>
+        <h2 class="contact-headline reveal" id="contact-title">
+          Let's <span class="gradient-text">build</span> something.
+        </h2>
+        <p class="contact-sub reveal">
+          I'm open to interesting roles, freelance projects, and conversations
+          about software craft. The fastest way to reach me is email.
+        </p>
 
+        <button type="button" class="contact-email reveal" id="copy-email" data-email="[your-email@example.com]">
+          <span id="copy-email-label">[your-email@example.com]</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+        </button>
 
+        <div class="contact-socials reveal">
+          <a class="social-link" href="https://github.com/belmer" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.5-.3-5.2-1.3-5.2-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.2 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5 4.5-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5z" />
+            </svg>
+          </a>
+          <a class="social-link" href="https://twitter.com/__mr_b_" target="_blank" rel="noopener" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.969 6.817H1.671l7.732-8.835L1.244 2.25h6.832l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a class="social-link" href="https://stackoverflow.com/users/163228/mr-b" target="_blank" rel="noopener" aria-label="Stack Overflow">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.36 20.13v-4.62h1.54V21.7H3v-6.19h1.54v4.62zM5.79 14.9l8.45 1.79.32-1.51-8.45-1.79zm1.12-4.04l7.83 3.65.65-1.39-7.83-3.66zm2.18-3.84l6.62 5.52 1-1.18-6.63-5.52zM13.4 3.07l-1.24.92 5.13 6.91 1.24-.92zM5.62 17.97h8.64v-1.54H5.62z" />
+            </svg>
+          </a>
+          <a class="social-link" href="mailto:[your-email@example.com]" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year">2026</span> [Your Name]. All rights reserved.</span>
+      <span>Built with vanilla web</span>
+    </div>
+  </footer>
 
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <script src="/js/main.js" defer></script>
 </body>
 </html>
