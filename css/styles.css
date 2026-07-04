@@ -723,6 +723,44 @@ details > *:not(summary) {
 }
 
 /* ----------------------------------------------------------------------------
+   Game — Perfect Stack (canvas in a card)
+---------------------------------------------------------------------------- */
+.game-tagline {
+  margin: -0.35rem 0 1rem;
+  color: var(--ink-65);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.game-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#stack-game {
+  display: block;
+  width: 100%;
+  height: clamp(340px, 55vh, 520px);
+  cursor: pointer;
+  outline: none;
+  /* Allow page scroll over the canvas; block double-tap zoom on mobile */
+  touch-action: manipulation;
+}
+
+.game-hint {
+  margin: 0;
+  padding: 0.65rem 1.5rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.85rem;
+  color: var(--ink-50);
+  text-align: center;
+  user-select: none;
+}
+
+/* ----------------------------------------------------------------------------
    Footer
 ---------------------------------------------------------------------------- */
 .site-footer {
