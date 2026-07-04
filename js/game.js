@@ -35,6 +35,11 @@
 
   try { best = parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0; } catch (e) {}
 
+  // Google Analytics — no-op if gtag isn't loaded (blocked, offline, local dev).
+  const track = (event, params) => {
+    if (typeof window.gtag === 'function') window.gtag('event', event, params);
+  };
+
   // --- Theme colours (read from the site's CSS variables) ---------------------
   let theme = { ink: '#37352f', ink65: 'rgba(55,53,47,.65)', ink50: 'rgba(55,53,47,.5)', bg: '#ffffff' };
   const readTheme = () => {
@@ -99,12 +104,14 @@
   };
 
   const startGame = () => {
+    const isRestart = state === 'gameOver';
     blocks = [baseBlock()];
     score = 0;
     newBest = false;
     perfectFlash = 0;
     spawnMoving();
     state = 'playing';
+    track('game_start', { game_name: 'perfect_stack', restart: isRestart });
   };
 
   const endGame = () => {
@@ -116,6 +123,12 @@
       newBest = true;
       try { localStorage.setItem(STORAGE_KEY, String(best)); } catch (e) {}
     }
+    track('game_over', {
+      game_name: 'perfect_stack',
+      score: score,
+      best_score: best,
+      new_best: newBest,
+    });
   };
 
   const placeBlock = () => {
