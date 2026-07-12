@@ -1,110 +1,227 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)" />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#191919"
+      media="(prefers-color-scheme: dark)"
+    />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D7591VKHV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1D7591VKHV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-1D7591VKHV');
-  </script>
+      gtag("config", "G-1D7591VKHV");
+    </script>
 
-  <title>Belmer Belandres</title>
-  <meta name="description" content="Belmer Belandres — software engineer. Selected work, services, and what I'm building." />
-  <meta name="author" content="Belmer Belandres" />
+    <title>Belmer Belandres</title>
+    <meta
+      name="description"
+      content="Belmer Belandres — software engineer. Selected work, services, and what I'm building."
+    />
+    <meta name="author" content="Belmer Belandres" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portfolio — Belmer Belandres" />
+    <meta
+      property="og:description"
+      content="Belmer Belandres is a software engineer, CTO, and product-focused builder creating scalable platforms for design, eCommerce, and apparel technology."
+    />
+    <meta property="og:url" content="https://www.belmerbelandres.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@__mr_b_" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Portfolio — Belmer Belandres" />
-  <meta property="og:description" content="Belmer Belandres is a software engineer, CTO, and product-focused builder creating scalable platforms for design, eCommerce, and apparel technology." />
-  <meta property="og:url" content="https://www.belmerbelandres.com/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@__mr_b_" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="images/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-icon-180x180.png"
+    />
+    <link rel="manifest" href="images/manifest.json" />
 
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png" />
-  <link rel="manifest" href="images/manifest.json" />
+    <!-- Theme: applied before paint to prevent FOUC -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (!t)
+            t = matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
 
-  <!-- Theme: applied before paint to prevent FOUC -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <!-- Reusable SVG symbols -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <defs>
-      <!-- Filter / sort / search action icons (used in tab bars) -->
-      <symbol id="ico-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="7"  x2="20" y2="7" />
-        <line x1="7" y1="12" x2="17" y2="12" />
-        <line x1="10" y1="17" x2="14" y2="17" />
-      </symbol>
-      <symbol id="ico-sort" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M7 4v16M4 17l3 3 3-3" />
-        <path d="M17 4v16M14 7l3-3 3 3" />
-      </symbol>
-      <symbol id="ico-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="7" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </symbol>
-      <!-- Project card folder -->
-      <symbol id="ico-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-      </symbol>
-    </defs>
-  </svg>
-
-  <button class="theme-fab" id="theme-toggle" type="button" aria-label="Switch theme">
-    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Reusable SVG symbols -->
+    <svg
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <!-- Filter / sort / search action icons (used in tab bars) -->
+        <symbol
+          id="ico-filter"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="7" y1="12" x2="17" y2="12" />
+          <line x1="10" y1="17" x2="14" y2="17" />
+        </symbol>
+        <symbol
+          id="ico-sort"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7 4v16M4 17l3 3 3-3" />
+          <path d="M17 4v16M14 7l3-3 3 3" />
+        </symbol>
+        <symbol
+          id="ico-search"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </symbol>
+        <!-- Project card folder -->
+        <symbol
+          id="ico-folder"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
+          />
+        </symbol>
+      </defs>
     </svg>
-    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-  </button>
 
-  <main class="page" id="top">
-    <h1 class="page-title">Belmer Belandres</h1>
-    <p class="page-subtitle">Engineering leader building products, platforms, and the systems behind them.</p>
+    <button
+      class="theme-fab"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch theme"
+    >
+      <svg
+        class="icon-sun"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+        />
+      </svg>
+      <svg
+        class="icon-moon"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
 
-    <!-- ============================ HERO ============================ -->
-    <section class="hero">
-      <div class="hero-text">
-        <h2 class="hero-greeting">Hello, </h2>
-        <p>
-          I'm the <strong>Head of Engineering</strong> of
-          <a href="https://www.23point5.com/" target="_blank" rel="noopener">23point5</a> —
-          an end-to-end platform that lets creators design, manufacture, and
-          ship their own fashion brands on demand, from a 3D design studio
-          straight to cut-and-sew production.
-        </p>
-        <p>
-          Day to day, I build and scale the systems behind the platform — the
-          design studio, the storefronts, and the pipeline that turns a single
-          order into a made-to-order garment. I care about software that's
-          quiet, fast, and obviously useful.
-        </p>
-        <!-- <a class="hero-cta" href="mailto:[your-email@example.com]">
+    <main class="page" id="top">
+      <h1 class="page-title">Belmer Belandres</h1>
+      <p class="page-subtitle">
+        Engineering leader building products, platforms, and the systems behind
+        them.
+      </p>
+
+      <!-- ============================ HERO ============================ -->
+      <section class="hero">
+        <div class="hero-text">
+          <h2 class="hero-greeting">Hello,</h2>
+          <p>
+            I'm the <strong>Head of Engineering</strong> of
+            <a href="https://www.23point5.com/" target="_blank" rel="noopener"
+              >23point5</a
+            >
+            — an end-to-end platform that lets creators design, manufacture, and
+            ship their own fashion brands on demand, from a 3D design studio
+            straight to cut-and-sew production.
+          </p>
+          <p>
+            Day to day, I build and scale the systems behind the platform — the
+            design studio, the storefronts, and the pipeline that turns a single
+            order into a made-to-order garment. I care about software that's
+            quiet, fast, and obviously useful.
+          </p>
+          <!-- <a class="hero-cta" href="mailto:[your-email@example.com]">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <line x1="16" y1="3" x2="16" y2="7" />
@@ -113,100 +230,168 @@
           </svg>
           Book a call
         </a> -->
-      </div>
+        </div>
 
-      <div class="hero-image" role="img" aria-label="Belmer Belandres" style="background-image: url('images/profile.png');"></div>
-    </section>
+        <div
+          class="hero-image"
+          role="img"
+          aria-label="Belmer Belandres"
+          style="background-image: url(&quot;images/profile.png&quot;)"
+        ></div>
+      </section>
 
-    <!-- ============================ SKILLS ============================ -->
-    <section class="section">
-      <h2 class="section-title">Skills</h2>
+      <!-- ============================ SKILLS ============================ -->
+      <section class="section">
+        <h2 class="section-title">Skills</h2>
 
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3 class="skill-group-label">Core engineering</h3>
-          <div class="skill-grid">
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><line x1="8" y1="9" x2="14" y2="9" /><line x1="11" y1="9" x2="11" y2="16" /></svg>
-              </span>
-              TypeScript
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" /><path d="M12 8v9M9 11l3 1.5 3-1.5" /></svg>
-              </span>
-              Node.js
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
-              </span>
-              Python
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg>
-              </span>
-              PostgreSQL
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3 class="skill-group-label">Core engineering</h3>
+            <div class="skill-grid">
+              <div class="skill-card">
+                <span class="skill-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                    <line x1="8" y1="9" x2="14" y2="9" />
+                    <line x1="11" y1="9" x2="11" y2="16" />
+                  </svg>
+                </span>
+                TypeScript
+              </div>
+              <div class="skill-card">
+                <span class="skill-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" />
+                    <path d="M12 8v9M9 11l3 1.5 3-1.5" />
+                  </svg>
+                </span>
+                Node.js
+              </div>
+              <div class="skill-card">
+                <span class="skill-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </span>
+                Python
+              </div>
+              <div class="skill-card">
+                <span class="skill-card-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <ellipse cx="12" cy="6" rx="8" ry="3" />
+                    <path
+                      d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"
+                    />
+                  </svg>
+                </span>
+                PostgreSQL
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="skill-group">
-          <h3 class="skill-group-label">Specialties</h3>
-          <div class="skill-tags">
-            <span class="tag">System architecture</span>
-            <span class="tag">Performance</span>
-            <span class="tag">Databases</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">AI systems</span>
+          <div class="skill-group">
+            <h3 class="skill-group-label">Specialties</h3>
+            <div class="skill-tags">
+              <span class="tag">System architecture</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Frontend</span>
+              <span class="tag">AI systems</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-label">Leadership</h3>
+            <div class="skill-tags">
+              <span class="tag">Technical direction</span>
+              <span class="tag">Mentorship</span>
+              <span class="tag">Cross-functional delivery</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-label">Tools &amp; languages</h3>
+            <p class="skill-line">
+              Zed, Ghostty <span class="skill-line-sep">&middot;</span> English,
+              Bisaya, Tagalog
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="skill-group">
-          <h3 class="skill-group-label">Leadership</h3>
-          <div class="skill-tags">
-            <span class="tag">Technical direction</span>
-            <span class="tag">Mentorship</span>
-            <span class="tag">Cross-functional delivery</span>
-          </div>
-        </div>
+      <!-- ============================ PROJECTS ============================ -->
+      <section class="section">
+        <h2 class="section-title">Projects</h2>
 
-        <div class="skill-group">
-          <h3 class="skill-group-label">Tools &amp; languages</h3>
-          <p class="skill-line">Zed, Ghostty <span class="skill-line-sep">&middot;</span> English, Bisaya, Tagalog</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================ PROJECTS ============================ -->
-    <section class="section">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="tabs" data-tabs>
-        <div class="tab-bar" role="tablist" aria-label="Project categories">
-          <button class="tab" role="tab" aria-selected="true" data-tab="projects-featured">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <polygon points="12 2 14.9 8.6 22 9.3 16.5 14.1 18.2 21 12 17.3 5.8 21 7.5 14.1 2 9.3 9.1 8.6" />
-            </svg>
-            Featured
-          </button>
-          <!--<button class="tab" role="tab" aria-selected="false" data-tab="projects-past">
+        <div class="tabs" data-tabs>
+          <div class="tab-bar" role="tablist" aria-label="Project categories">
+            <button
+              class="tab"
+              role="tab"
+              aria-selected="true"
+              data-tab="projects-featured"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon
+                  points="12 2 14.9 8.6 22 9.3 16.5 14.1 18.2 21 12 17.3 5.8 21 7.5 14.1 2 9.3 9.1 8.6"
+                />
+              </svg>
+              Featured
+            </button>
+            <!--<button class="tab" role="tab" aria-selected="false" data-tab="projects-past">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
               <path d="M12 7v5l3 2" />
             </svg>
             Past Projects
           </button>-->
-          <div class="tab-actions">
-            <button class="tab-action" type="button" aria-label="Filter"><svg><use href="#ico-filter" /></svg></button>
-            <button class="tab-action" type="button" aria-label="Sort"><svg><use href="#ico-sort" /></svg></button>
-            <button class="tab-action" type="button" aria-label="Search"><svg><use href="#ico-search" /></svg></button>
+            <div class="tab-actions">
+              <button class="tab-action" type="button" aria-label="Filter">
+                <svg><use href="#ico-filter" /></svg>
+              </button>
+              <button class="tab-action" type="button" aria-label="Sort">
+                <svg><use href="#ico-sort" /></svg>
+              </button>
+              <button class="tab-action" type="button" aria-label="Search">
+                <svg><use href="#ico-search" /></svg>
+              </button>
+            </div>
           </div>
-        </div>
 
-        <!--<div class="tab-panel" id="projects-featured" data-active>
+          <!--<div class="tab-panel" id="projects-featured" data-active>
           <div class="project-grid">
             <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
               <h3 class="project-card-title">
@@ -232,116 +417,165 @@
           </div>
         </div>-->
 
-        <div class="tab-panel" id="projects-featured" data-active>
-          <div class="project-grid">
-            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
-              <h3 class="project-card-title">
-                <svg><use href="#ico-folder" /></svg>
-                Design Studio
-              </h3>
-              <span class="tag">Lead Engineer / Platform Architect</span>
-              <ul class="project-facts">
-                <li>
-                  <span class="project-fact-label">Problem</span>
-                  Creators with no design or manufacturing background had no way to turn an idea into production-ready apparel — the traditional path requires designers, sample runs, and weeks of back-and-forth.
-                </li>
-                <li>
-                  <span class="project-fact-label">What I built</span>
-                  Designed and built the studio end to end: an interactive 3D garment editor with AI-assisted design generation, artwork placement, automated mockup creation, and one-click Shopify publishing.
-                </li>
-                <li>
-                  <span class="project-fact-label">Impact</span>
-                  Cut design-to-storefront time from weeks to minutes; [X] products created by [X] merchants, with AI generations returning print-ready designs in [X] seconds.
-                </li>
-                <li>
-                  <span class="project-fact-label">Challenge</span>
-                  Rendering garments in real time in the browser while keeping every design faithful to what cut-and-sew production can actually manufacture.
-                </li>
-              </ul>
-              <div class="project-tags">
-                <span class="tag">TypeScript</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">3D / WebGL</span>
-                <span class="tag">AI generation</span>
-                <span class="tag">Shopify API</span>
-              </div>
-            </a>
-            <a class="project-card" href="https://github.com/belmer" target="_blank" rel="noopener">
-              <h3 class="project-card-title">
-                <svg><use href="#ico-folder" /></svg>
-                23point5 Platform
-              </h3>
-              <span class="tag">Head of Engineering / Lead Engineer</span>
-              <ul class="project-facts">
-                <li>
-                  <span class="project-fact-label">Problem</span>
-                  Made-to-order apparel has no inventory — every sale is unique, and each one has to travel from a design file to cut-and-sew production and shipping without manual coordination breaking it.
-                </li>
-                <li>
-                  <span class="project-fact-label">What I built</span>
-                  Architected the end-to-end platform connecting design creation, Shopify publishing, order management, production, and logistics — turning a single storefront order into factory-ready production instructions automatically.
-                </li>
-                <li>
-                  <span class="project-fact-label">Impact</span>
-                  [X] orders fulfilled for [X] merchants; reduced order-to-production handoff from hours of manual work to an automated flow measured in minutes.
-                </li>
-                <li>
-                  <span class="project-fact-label">Challenge</span>
-                  Keeping four very different systems — design, commerce, production, and shipping — consistent when every order is a one-of-a-kind product.
-                </li>
-              </ul>
-              <div class="project-tags">
-                <span class="tag">Node.js</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Shopify integration</span>
-                <span class="tag">Order pipeline</span>
-              </div>
-            </a>
+          <div class="tab-panel" id="projects-featured" data-active>
+            <div class="project-grid">
+              <a
+                class="project-card"
+                href="https://github.com/belmer"
+                target="_blank"
+                rel="noopener"
+              >
+                <h3 class="project-card-title">
+                  <svg><use href="#ico-folder" /></svg>
+                  Design Studio
+                </h3>
+                <span class="tag">Lead Engineer / Platform Architect</span>
+                <ul class="project-facts">
+                  <li>
+                    <span class="project-fact-label">Problem</span>
+                    Creators with no design or manufacturing background had no
+                    way to turn an idea into production-ready apparel — the
+                    traditional path requires designers, sample runs, and weeks
+                    of back-and-forth.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">What I built</span>
+                    Designed and built the studio end to end: an interactive 3D
+                    garment editor with AI-assisted design generation, artwork
+                    placement, automated mockup creation, and one-click Shopify
+                    publishing.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">Impact</span>
+                    Cut design-to-storefront time from weeks to minutes; [X]
+                    products created by [X] merchants, with AI generations
+                    returning print-ready designs in [X] seconds.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">Challenge</span>
+                    Rendering garments in real time in the browser while keeping
+                    every design faithful to what cut-and-sew production can
+                    actually manufacture.
+                  </li>
+                </ul>
+                <div class="project-tags">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">3D / WebGL</span>
+                  <span class="tag">AI generation</span>
+                  <span class="tag">Shopify API</span>
+                </div>
+              </a>
+              <a
+                class="project-card"
+                href="https://github.com/belmer"
+                target="_blank"
+                rel="noopener"
+              >
+                <h3 class="project-card-title">
+                  <svg><use href="#ico-folder" /></svg>
+                  23point5 Platform
+                </h3>
+                <span class="tag">Head of Engineering / Lead Engineer</span>
+                <ul class="project-facts">
+                  <li>
+                    <span class="project-fact-label">Problem</span>
+                    Made-to-order apparel has no inventory — every sale is
+                    unique, and each one has to travel from a design file to
+                    cut-and-sew production and shipping without manual
+                    coordination breaking it.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">What I built</span>
+                    Architected the end-to-end platform connecting design
+                    creation, Shopify publishing, order management, production,
+                    and logistics — turning a single storefront order into
+                    factory-ready production instructions automatically.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">Impact</span>
+                    [X] orders fulfilled for [X] merchants; reduced
+                    order-to-production handoff from hours of manual work to an
+                    automated flow measured in minutes.
+                  </li>
+                  <li>
+                    <span class="project-fact-label">Challenge</span>
+                    Keeping four very different systems — design, commerce,
+                    production, and shipping — consistent when every order is a
+                    one-of-a-kind product.
+                  </li>
+                </ul>
+                <div class="project-tags">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Shopify integration</span>
+                  <span class="tag">Order pipeline</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============================ Experiences ============================ -->
-    <section class="section">
-      <h2 class="section-title">Experiences</h2>
+      <!-- ============================ Experiences ============================ -->
+      <section class="section">
+        <h2 class="section-title">Experiences</h2>
 
-      <div class="exp-list">
-        <article class="exp">
-          <header class="exp-co">
-            <span class="exp-mark" aria-hidden="true">23</span>
-            <div>
-              <h3 class="exp-co-name">23point5</h3>
-              <a class="exp-co-link" href="https://www.23point5.com/" target="_blank" rel="noopener">www.23point5.com</a>
-              <span class="exp-co-meta">United States</span>
-            </div>
-          </header>
-          <ol class="exp-roles">
-            <li class="exp-role">
-              <div class="exp-role-head">
-                <span class="exp-role-title">Head of Engineering</span>
-                <span class="exp-role-when">Jan 2022 — Present</span>
+        <div class="exp-list">
+          <article class="exp">
+            <header class="exp-co">
+              <span class="exp-mark" aria-hidden="true">23</span>
+              <div>
+                <h3 class="exp-co-name">23point5</h3>
+                <a
+                  class="exp-co-link"
+                  href="https://www.23point5.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >www.23point5.com</a
+                >
+                <span class="exp-co-meta">United States</span>
               </div>
-              <p class="exp-role-desc">
-                Driving the development of ecommerce and production technology
-                for a full-stack licensed-apparel company that fuses streetwear,
-                music, and design with on-demand manufacturing and smart
-                logistics. Lead cross-functional teams across front-end,
-                back-end, and DevOps to build systems that scale.
-              </p>
-              <ul class="exp-role-bullets">
-                <li>Architected and deployed multiple Shopify apps — a design studio, smart size-recommendation engine, and personalized order-tracking portal.</li>
-                <li>Built custom APIs and automation for on-demand manufacturing, fulfillment, and royalty tracking.</li>
-                <li>Integrated third-party logistics, shipping APIs, and print facilities into a global apparel pipeline.</li>
-                <li>Led cross-team rollout of scalable, modular front-end systems across multiple brands and geographies.</li>
-              </ul>
-            </li>
-          </ol>
-        </article>
+            </header>
+            <ol class="exp-roles">
+              <li class="exp-role">
+                <div class="exp-role-head">
+                  <span class="exp-role-title">Head of Engineering</span>
+                  <span class="exp-role-when">Jan 2022 — Present</span>
+                </div>
+                <p class="exp-role-desc">
+                  Driving the development of ecommerce and production technology
+                  for a full-stack licensed-apparel company that fuses
+                  streetwear, music, and design with on-demand manufacturing and
+                  smart logistics. Lead cross-functional teams across front-end,
+                  back-end, and DevOps to build systems that scale.
+                </p>
+                <ul class="exp-role-bullets">
+                  <li>
+                    Architected and deployed multiple Shopify apps — a design
+                    studio, smart size-recommendation engine, and personalized
+                    order-tracking portal.
+                  </li>
+                  <li>
+                    Built custom APIs and automation for on-demand
+                    manufacturing, fulfillment, and royalty tracking.
+                  </li>
+                  <li>
+                    Integrated third-party logistics, shipping APIs, and print
+                    facilities into a global apparel pipeline.
+                  </li>
+                  <li>
+                    Led cross-team rollout of scalable, modular front-end
+                    systems across multiple brands and geographies.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </article>
 
-        <article class="exp">
+          <!--<article class="exp">
           <header class="exp-co">
             <span class="exp-mark" aria-hidden="true">ZU</span>
             <div>
@@ -357,44 +591,48 @@
               </div>
             </li>
           </ol>
-        </article>
+        </article>-->
 
-        <article class="exp">
-          <header class="exp-co">
-            <span class="exp-mark" aria-hidden="true">DN</span>
-            <div>
-              <h3 class="exp-co-name">DNA Micro Software Inc.</h3>
-              <span class="exp-co-meta">Cebu City, Philippines</span>
-            </div>
-          </header>
-          <ol class="exp-roles">
-            <li class="exp-role">
-              <div class="exp-role-head">
-                <span class="exp-role-title">President &amp; Head of Engineering</span>
-                <span class="exp-role-when">Mar 2008 — Jan 2022</span>
+          <article class="exp">
+            <header class="exp-co">
+              <span class="exp-mark" aria-hidden="true">DN</span>
+              <div>
+                <h3 class="exp-co-name">DNA Micro Software Inc.</h3>
+                <span class="exp-co-meta">Cebu City, Philippines</span>
               </div>
-            </li>
-          </ol>
-        </article>
+            </header>
+            <ol class="exp-roles">
+              <li class="exp-role">
+                <div class="exp-role-head">
+                  <span class="exp-role-title"
+                    >President &amp; Head of Engineering</span
+                  >
+                  <span class="exp-role-when">Mar 2008 — Jan 2022</span>
+                </div>
+              </li>
+            </ol>
+          </article>
 
-        <article class="exp">
-          <header class="exp-co">
-            <span class="exp-mark" aria-hidden="true">DR</span>
-            <div>
-              <h3 class="exp-co-name">Drumbi Corporation</h3>
-            </div>
-          </header>
-          <ol class="exp-roles">
-            <li class="exp-role">
-              <div class="exp-role-head">
-                <span class="exp-role-title">Lead Senior Software Engineer</span>
-                <span class="exp-role-when">Mar 2003 — Mar 2016</span>
+          <article class="exp">
+            <header class="exp-co">
+              <span class="exp-mark" aria-hidden="true">DR</span>
+              <div>
+                <h3 class="exp-co-name">Drumbi Corporation</h3>
               </div>
-            </li>
-          </ol>
-        </article>
+            </header>
+            <ol class="exp-roles">
+              <li class="exp-role">
+                <div class="exp-role-head">
+                  <span class="exp-role-title"
+                    >Lead Senior Software Engineer</span
+                  >
+                  <span class="exp-role-when">Mar 2003 — Mar 2016</span>
+                </div>
+              </li>
+            </ol>
+          </article>
 
-        <article class="exp">
+          <!--<article class="exp">
           <header class="exp-co">
             <span class="exp-mark" aria-hidden="true">TT</span>
             <div>
@@ -410,27 +648,27 @@
               </div>
             </li>
           </ol>
-        </article>
+        </article>-->
 
-        <article class="exp">
-          <header class="exp-co">
-            <span class="exp-mark" aria-hidden="true">GV</span>
-            <div>
-              <h3 class="exp-co-name">Global Net Value Solutions</h3>
-              <span class="exp-co-meta">Cebu City, Philippines</span>
-            </div>
-          </header>
-          <ol class="exp-roles">
-            <li class="exp-role">
-              <div class="exp-role-head">
-                <span class="exp-role-title">Flash Developer Lead</span>
-                <span class="exp-role-when">Mar 2006 — Mar 2008</span>
+          <article class="exp">
+            <header class="exp-co">
+              <span class="exp-mark" aria-hidden="true">GV</span>
+              <div>
+                <h3 class="exp-co-name">Global Net Value Solutions</h3>
+                <span class="exp-co-meta">Cebu City, Philippines</span>
               </div>
-            </li>
-          </ol>
-        </article>
+            </header>
+            <ol class="exp-roles">
+              <li class="exp-role">
+                <div class="exp-role-head">
+                  <span class="exp-role-title">Flash Developer Lead</span>
+                  <span class="exp-role-when">Mar 2006 — Mar 2008</span>
+                </div>
+              </li>
+            </ol>
+          </article>
 
-        <article class="exp">
+          <!--<article class="exp">
           <header class="exp-co">
             <span class="exp-mark" aria-hidden="true">PW</span>
             <div>
@@ -445,12 +683,12 @@
               </div>
             </li>
           </ol>
-        </article>
-      </div>
-    </section>
+        </article>-->
+        </div>
+      </section>
 
-    <!-- =================== LET'S WORK TOGETHER =================== -->
-    <!--<section class="section">
+      <!-- =================== LET'S WORK TOGETHER =================== -->
+      <!--<section class="section">
       <h2 class="section-title">Let's Work Together</h2>
       <div class="work-grid">
         <p class="work-text">
@@ -462,7 +700,7 @@
 
         <!-- NOTE: replace `action` with your form endpoint (Formspree, Basin,
              Web3Forms, etc.) when going live. -->
-        <!--<form class="contact-form" action="#" method="post" novalidate>
+      <!--<form class="contact-form" action="#" method="post" novalidate>
           <div class="form-field">
             <label for="f-name">Name <span class="form-required" aria-hidden="true">*</span></label>
             <input id="f-name" name="name" type="text" placeholder="John Doe" required />
@@ -499,57 +737,63 @@
       <!--</div>
     </section>-->
 
-    <!-- ============================ GAME ============================ -->
-    <section class="section game">
-      <h2 class="section-title">Bored Already?</h2>
-      <p class="game-tagline">
-        Fine. Stack these blocks — my best is embarrassingly high, and yes,
-        it was achieved during "work hours." Beat it and we'll both pretend
-        you read the rest of this page.
-      </p>
-      <div class="game-card">
-        <canvas id="stack-game" tabindex="0" aria-label="Perfect Stack game. Tap or press space when the block lines up. Don't miss."></canvas>
-        <p class="game-hint">Tap or press space when the block lines up. Don&rsquo;t miss.</p>
-      </div>
-    </section>
-
-    <!-- ============================ FAQs ============================ -->
-    <section class="faqs">
-      <h2>FAQs</h2>
-      <details open>
-        <summary>Do you play computer games?</summary>
-        <p>
-          Absolutely. My Steam library is roughly 80% wishlist, 15% installed,
-          and 5% actually finished — and that 5% is a personal best. The "just
-          one more turn" problem is very real in this household, and it's
-          usually settled at 2&nbsp;a.m. by my keyboard, against my will.
+      <!-- ============================ GAME ============================ -->
+      <section class="section game">
+        <h2 class="section-title">Bored Already?</h2>
+        <p class="game-tagline">
+          Fine. Stack these blocks — my best is embarrassingly high, and yes, it
+          was achieved during "work hours." Beat it and we'll both pretend you
+          read the rest of this page.
         </p>
-      </details>
-      <details open>
-        <summary>Do you build your own computer?</summary>
-        <p>
-          Absolutely yes. I've cable-managed in the dark, lost a thumb-war with
-          thermal paste, and spent entire weekends tuning RGB that nobody but
-          me will ever see. If a part can be benchmarked, swapped, or quietly
-          upgraded at 2&nbsp;a.m., it has happened in this office. Don't ask
-          how many fans is "too many" — there is no such number.
-        </p>
-      </details>
-      <details open>
-        <summary>Do you watch anime?</summary>
-        <p>
-          Yes sir. Decades deep, watchlist still growing faster than my
-          lifespan, and I will happily defend a slow slice-of-life over the
-          latest hype show in any conversation foolish enough to start one.
-          Subs over dubs — but I'm civil about it.
-        </p>
-      </details>
-    </section>
+        <div class="game-card">
+          <canvas
+            id="stack-game"
+            tabindex="0"
+            aria-label="Perfect Stack game. Tap or press space when the block lines up. Don't miss."
+          ></canvas>
+          <p class="game-hint">
+            Tap or press space when the block lines up. Don&rsquo;t miss.
+          </p>
+        </div>
+      </section>
 
-    <p class="site-footer">© <span id="year">2026</span> {MR.B}</p>
-  </main>
+      <!-- ============================ FAQs ============================ -->
+      <section class="faqs">
+        <h2>FAQs</h2>
+        <details open>
+          <summary>Do you play computer games?</summary>
+          <p>
+            Absolutely. My Steam library is roughly 80% wishlist, 15% installed,
+            and 5% actually finished — and that 5% is a personal best. The "just
+            one more turn" problem is very real in this household, and it's
+            usually settled at 2&nbsp;a.m. by my keyboard, against my will.
+          </p>
+        </details>
+        <details open>
+          <summary>Do you build your own computer?</summary>
+          <p>
+            Absolutely yes. I've cable-managed in the dark, lost a thumb-war
+            with thermal paste, and spent entire weekends tuning RGB that nobody
+            but me will ever see. If a part can be benchmarked, swapped, or
+            quietly upgraded at 2&nbsp;a.m., it has happened in this office.
+            Don't ask how many fans is "too many" — there is no such number.
+          </p>
+        </details>
+        <details open>
+          <summary>Do you watch anime?</summary>
+          <p>
+            Yes sir. Decades deep, watchlist still growing faster than my
+            lifespan, and I will happily defend a slow slice-of-life over the
+            latest hype show in any conversation foolish enough to start one.
+            Subs over dubs — but I'm civil about it.
+          </p>
+        </details>
+      </section>
 
-  <script src="js/main.js" defer></script>
-  <script src="js/game.js" defer></script>
-</body>
+      <p class="site-footer">© <span id="year">2026</span> {MR.B}</p>
+    </main>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/game.js" defer></script>
+  </body>
 </html>
