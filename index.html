@@ -122,50 +122,15 @@
     <section class="section">
       <h2 class="section-title">Skills</h2>
 
-      <div class="tabs" data-tabs>
-        <div class="tab-bar" role="tablist" aria-label="Skill categories">
-          <button class="tab" role="tab" aria-selected="true" data-tab="skills-software">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="13" rx="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg>
-            Software
-          </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="skills-tools">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2 2 0 0 1-2.8-2.8l9.4-9.4a4 4 0 0 0-5-5l3.5 3.5-1.4 1.4-3.5-3.5a4 4 0 0 0 5 5z" />
-            </svg>
-            Tools
-          </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="skills-expertise">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
-              <path d="M9 12l2 2 4-4" />
-            </svg>
-            Engineering
-          </button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="skills-language">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
-            </svg>
-            Language
-          </button>
-          <div class="tab-actions">
-            <button class="tab-action" type="button" aria-label="Filter"><svg><use href="#ico-filter" /></svg></button>
-            <button class="tab-action" type="button" aria-label="Sort"><svg><use href="#ico-sort" /></svg></button>
-            <button class="tab-action" type="button" aria-label="Search"><svg><use href="#ico-search" /></svg></button>
-          </div>
-        </div>
-
-        <div class="tab-panel" id="skills-software" data-active>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3 class="skill-group-label">Core engineering</h3>
           <div class="skill-grid">
             <div class="skill-card">
               <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><line x1="8" y1="9" x2="14" y2="9" /><line x1="11" y1="9" x2="11" y2="16" /></svg>
               </span>
-              PostgreSQL
+              TypeScript
             </div>
             <div class="skill-card">
               <span class="skill-card-icon">
@@ -175,59 +140,42 @@
             </div>
             <div class="skill-card">
               <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><line x1="8" y1="9" x2="14" y2="9" /><line x1="11" y1="9" x2="11" y2="16" /></svg>
-              </span>
-              TypeScript
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
               </span>
               Python
             </div>
-          </div>
-        </div>
-
-        <div class="tab-panel" id="skills-tools">
-          <div class="skill-grid">
             <div class="skill-card">
               <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><polyline points="7 10 10 13 7 16" /><line x1="13" y1="16" x2="17" y2="16" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg>
               </span>
-              Ghostty Terminal
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" /><line x1="3" y1="8" x2="21" y2="8" /><line x1="7" y1="12" x2="14" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /></svg>
-              </span>
-              Zed Editor
-            </div>
-            <div class="skill-card">
-              <span class="skill-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z" /><path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9z" /></svg>
-              </span>
-              AI
+              PostgreSQL
             </div>
           </div>
         </div>
 
-        <div class="tab-panel" id="skills-expertise">
-          <div class="skill-grid">
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l3-3 3 3 3-3 3 3 3-3 3 3" /><path d="M3 17h18" /></svg></span>Frontend</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" /></svg></span>Databases</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19.5L22 15l-4.5-4.5M6.5 19.5L2 15l4.5-4.5" /><path d="M14 4l-4 16" /></svg></span>System Design</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span>Performance</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-5 9 5-9 5-9-5z" /><path d="M3 12l9 5 9-5M3 17l9 5 9-5" /></svg></span>Architecture</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3" /><circle cx="17" cy="7" r="3" /><path d="M3 19c0-3 3-5 6-5s6 2 6 5" /><path d="M14 14c2 0 4 1.5 4 5" /></svg></span>Mentorship</div>
+        <div class="skill-group">
+          <h3 class="skill-group-label">Specialties</h3>
+          <div class="skill-tags">
+            <span class="tag">System architecture</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Databases</span>
+            <span class="tag">Frontend</span>
+            <span class="tag">AI systems</span>
           </div>
         </div>
 
-        <div class="tab-panel" id="skills-language">
-          <div class="skill-grid">
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>English</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>Bisaya</div>
-            <div class="skill-card"><span class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg></span>Tagalog</div>
+        <div class="skill-group">
+          <h3 class="skill-group-label">Leadership</h3>
+          <div class="skill-tags">
+            <span class="tag">Technical direction</span>
+            <span class="tag">Mentorship</span>
+            <span class="tag">Cross-functional delivery</span>
           </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-label">Tools &amp; languages</h3>
+          <p class="skill-line">Zed, Ghostty <span class="skill-line-sep">&middot;</span> English, Bisaya, Tagalog</p>
         </div>
       </div>
     </section>

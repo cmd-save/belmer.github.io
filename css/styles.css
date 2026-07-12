@@ -298,9 +298,40 @@ button { font: inherit; cursor: pointer; }
 /* ----------------------------------------------------------------------------
    Skill cards (icon + label)
 ---------------------------------------------------------------------------- */
+.skill-groups {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.skill-group-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-50);
+  margin: 0 0 0.6rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-line {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink-65);
+}
+.skill-line-sep {
+  color: var(--ink-35);
+  margin: 0 0.35rem;
+}
+
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.6rem;
 }
 
